@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css"
+    rel="stylesheet"
+  />
+   
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <link rel="stylesheet" href="../../public/css/main_carusel.css">
+    <link rel="stylesheet" href="../../public/css/proje.css">
+
+    <link rel="shortcut icon" href="../../public/img/logoseffaf2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+    <title>Bilim ve Teknoloji</title>
+</head>
+<body>
+    <div style="height: 70px;" id="home" ></div>
+    <div style=" z-index: 99999999999;">
+    <nav id="mynav">
+        <div class="my_navbar">
+            <div class="logo"></div>
+            <div class="navlist">
+                <div>
+                    <a style="color: white; text-decoration: none;" href="/view/template/main.html#home">
+                    <i class="fa-solid fa-globe" ></i>
+                    <li>Ana Sayfa</li>
+                </a>
+                </div>
+                
+
+                <div>
+                    <a style="color: white; text-decoration: none;" href="/view/template/main.html#hakkimizda">
+                    <i class="fa-solid fa-address-card"></i>
+                    <li>Hakkımızda</li>
+                </a>
+                </div>
+                
+
+                <div>
+                    <a style="color: white; text-decoration: none;" href="/view/template/projeler.html">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <li>Projeler</li>
+                    </a>
+                </div>
+                
+
+                <div>
+                    <a style="color: white; text-decoration: none;" href="#myfooter">
+                    <i class="fa-solid fa-address-book"></i>
+                    <li>İletişim</li>
+                    </a>
+                </div>
+                
+
+     
+
+                
+            </div>
+            <div class="navmobilList" id="mobilnavOpenBtn">
+                <i class="fa-solid fa-bars" style="color: white;"></i>
+            </div>
+        </div>
+
+
+
+    </nav>
+    
+
+</div>
+<div class="mobilnavbox" id="mobilnavbox">
+<img src="../../public/img/user2.png" alt="">
+<h4>Hüseyin Yalçın</h4>
+
+<ul>
+    <a style="color: white; text-decoration: none;" href="/view/template/main.html#home"> <li><i class="fa-solid fa-globe" ></i> Ana sayfa</li> </a>
+    <a style="color: white; text-decoration: none;" href="/view/template/main.html#hakkimizda">    <li><i class="fa-solid fa-address-card"></i> Hakkımızda</li> </a>
+ 
+    <a style="color: white; text-decoration: none;"  href="/view/template/projeler.html"><li> <i class="fa-solid fa-diagram-project"></i> Projeler</li></a>
+    <a style="color: white; text-decoration: none;" href="#myfooter"><li> <i class="fa-solid fa-address-book"></i> İletişim</li></a>
+    
+
+
+</ul>
+</div>
+
+
+
+
+<br><br class="d-md-block d-sm-none d-none ">
+
+<div class="container d-md-none d-sm-block " style="display: flex; justify-content:end;">
+  <div id="filterBtn" class=" border border-light text-light text-center me-2  mb-2 text-decoration-underline " style="padding: 5px; letter-spacing: 2px; width: 120px; border-radius: 15px;" ><i class="fa-solid fa-filter"></i> Filter </div>
+
+</div>
+<div class="container">
+  <div class="row">
+    <div id="filterBox" class="col-xl-3 col-lg-3 col-md-3 col-sm-12 d-block d-md-block d-none   py-3" style="background: #10182a; border: 1px solid rgb(202, 202, 202); border-radius: 9px;">
+
+
+
+
+      <h3 style="color: white; font-family: 'Courier New', Courier, monospace; border-bottom: 1px solid rgb(205, 205, 205); height: min-content;">Filter <i id="filterBoxCloseBtn" class="fs-5 fa-solid fa-xmark"  style=" float: right; margin-right: 10px;"></i></h3>
+
+
+      <div class="input-group mt-4">
+        <div class="form-outline" data-mdb-input-init>
+          <input type="search" id="form1" class="form-control text-light" />
+          <label class="form-label" for="form1">Search</label>
+        </div>
+        <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <label class="text-light ms-1 mt-4">Kategori</label>
+      <select class="form-select" aria-label="Default select example" >
+        <option selected>Kategori</option>
+        <option value="1"> Yazılım Geliştirme</option>
+        <option value="2">Elektronik ve Donanım</option>
+        <option value="3">Yazılım-Elektronik Entegrasyonu</option>
+        <option value="4">Güvenlik ve Ağ Sistemleri</option>
+      </select>
+
+
+
+
+      <label class="text-light ms-1  mt-3">Seviye</label>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Seviye</option>
+        <option value="1"> Başlangıç seviyesinde projeler</option>
+        <option value="2">Orta seviyede projeler</option>
+        <option value="3">İleri düzeyde projeler</option>
+
+      </select>
+
+
+
+      <label class="text-light ms-1 mt-3">Tarihe Göre Sırala</label>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Tarihe Göre Sırala</option>
+        <option value="1"> Yeniden Eskiye</option>
+        <option value="2">Eskiden Yeniye</option>
+
+      </select>
+
+
+      <button class="filterBtn bg-primary text-light mt-4">Filtrele</button>
+
+
+
+
+    </div>
+    <div class="col-xl-9  col-lg-9 col-md-9 col-sm-12" >
+      <section style>
+        <div style="margin-top: -20px;">
+      
+         
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="row justify-content-center mt-4">
+            <div class="col-md-12 col-xl-11">
+              <div class="card shadow-0 border rounded-3">
+                <div  style="background-color: #101728;" class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                      <div style="width: 100%;" class="bg-image hover-zoom ripple rounded ripple-surface">
+                        <img src="../../public/img/jotform.png"
+                          class="cardIMG w-100" />
+                        <a href="#!">
+                          <div class="hover-overlay">
+                            <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <h5 style="color: white;">Ul/UX Tasarım Projesi</h5>
+                      <b class="text-light">Yazılım Geliştrme</b>
+             
+            
+               
+                      <p style="color: rgb(224, 224, 224);" class=" ">
+Lorem ipsum dolor sit amet consectetur, adipisicing  asperiores, autem  molestias facilis modi.                      </p>
+                   
+                    
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                      <div class="d-flex flex-row align-items-center ">
+                        <!-- <h4 class="mb-1 me-1">200</h4> -->
+                        <span class="text-danger"><s><!-- eski fiyat --></s></span>
+                      </div>
+                      <!-- <h6 class="text-success">Ücretsiz Kargo</h6> -->
+                      <div class=" text-center" style="align-items: center; display: flex; flex-wrap: wrap;">
+                        <h3 class="text-light mb-4 d-xl-block d-md-block d-none">Jotform</h3>
+                        <a href="/view/template/detail.html" style="text-align: left; display: block; width: 100%;">
+                        <button class="btn btn-primary btn-sm" style="width: 100%;" type="button">İncele</button></a>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+          <div class="row justify-content-center mt-4">
+            <div class="col-md-12 col-xl-11">
+              <div class="card shadow-0 border rounded-3">
+                <div  style="background-color: #101728;" class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                      <div style="width: 100%;" class="bg-image hover-zoom ripple rounded ripple-surface">
+                        <img src="../../public/img/garanti.png"
+                          class="cardIMG w-100" />
+                        <a href="#!">
+                          <div class="hover-overlay">
+                            <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <h5 style="color: white;">Backend Geliştirme Projesi</h5>
+                      <b class="text-light">Yazılım Geliştrme</b>
+             
+            
+               
+                      <p style="color: rgb(224, 224, 224);" class=" ">
+Lorem ipsum dolor sit amet consectetur, adipisicing  asperiores, autem  molestias facilis modi.                      </p>
+                   
+                    
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                      <div class="d-flex flex-row align-items-center ">
+                        <!-- <h4 class="mb-1 me-1">200</h4> -->
+                        <span class="text-danger"><s><!-- eski fiyat --></s></span>
+                      </div>
+                      <!-- <h6 class="text-success">Ücretsiz Kargo</h6> -->
+                      <div class=" text-center" style="align-items: center; display: flex; flex-wrap: wrap;">
+                        <h3 class="text-light mb-4 d-xl-block d-md-block d-none">GarantiBBVA</h3>
+                        <a href="/view/template/detail.html" style="text-align: left; display: block; width: 100%;">
+                        <button class="btn btn-primary btn-sm" style="width: 100%;" type="button">İncele</button></a>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+    
+
+
+
+
+
+
+
+
+
+          <div class="row justify-content-center mt-4">
+            <div class="col-md-12 col-xl-11">
+              <div class="card shadow-0 border rounded-3">
+                <div  style="background-color: #101728;" class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                      <div style="width: 100%;" class="bg-image hover-zoom ripple rounded ripple-surface">
+                        <img src="../../public/img/akınsoft.png"
+                          class="cardIMG w-100" />
+                        <a href="#!">
+                          <div class="hover-overlay">
+                            <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <h5 style="color: white;">FrontEnd Geliştirme Projesi</h5>
+                      <b class="text-light">Yazılım Geliştrme</b>
+             
+            
+               
+                      <p style="color: rgb(224, 224, 224);" class=" ">
+Lorem ipsum dolor sit amet consectetur, adipisicing  asperiores, autem  molestias facilis modi.                      </p>
+                   
+                    
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                      <div class="d-flex flex-row align-items-center ">
+                        <!-- <h4 class="mb-1 me-1">200</h4> -->
+                        <span class="text-danger"><s><!-- eski fiyat --></s></span>
+                      </div>
+                      <!-- <h6 class="text-success">Ücretsiz Kargo</h6> -->
+                      <div class=" text-center" style="align-items: center; display: flex; flex-wrap: wrap;">
+                        <h3 class="text-light mb-4 d-xl-block d-md-block d-none">AkınSoft</h3>
+                        <a href="/view/template/detail.html" style="text-align: left; display: block; width: 100%;">
+                        <button class="btn btn-primary btn-sm" style="width: 100%;" type="button">İncele</button></a>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+
+
+
+
+
+
+
+
+
+
+          <div class="row justify-content-center mt-4">
+            <div class="col-md-12 col-xl-11">
+              <div class="card shadow-0 border rounded-3">
+                <div  style="background-color: #101728;" class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                      <div style="width: 100%;" class="bg-image hover-zoom ripple rounded ripple-surface">
+                        <img src="../../public/img/akbank.png"
+                          class="cardIMG w-100" />
+                        <a href="#!">
+                          <div class="hover-overlay">
+                            <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <h5 style="color: white;">Deprem Tahmini için Veri Bilimi</h5>
+                      <b class="text-light">Yazılım Geliştrme</b>
+             
+            
+               
+                      <p style="color: rgb(224, 224, 224);" class=" ">
+Lorem ipsum dolor sit amet consectetur, adipisicing  asperiores, autem  molestias facilis modi.                      </p>
+                   
+                    
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                      <div class="d-flex flex-row align-items-center ">
+                        <!-- <h4 class="mb-1 me-1">200</h4> -->
+                        <span class="text-danger"><s><!-- eski fiyat --></s></span>
+                      </div>
+                      <!-- <h6 class="text-success">Ücretsiz Kargo</h6> -->
+                      <div class=" text-center" style="align-items: center; display: flex; flex-wrap: wrap;">
+                        <h3 class="text-light mb-4 d-xl-block d-md-block d-none">AkBank</h3>
+                        <a href="/view/template/detail.html" style="text-align: left; display: block; width: 100%;">
+                        <button class="btn btn-primary btn-sm" style="width: 100%;" type="button">İncele</button></a>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+
+
+
+
+
+
+
+
+        
+      
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br><br><br><br><br><br>
+
+
+<div id="myfooter" class=" myfooter" style="background: #0a0e19; border-top: 1px solid rgb(131, 131, 131);">
+    <br><br>
+    <div class="container">
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <ul>
+                <li>Bilim Ve Teknoloji Topluluğu</li>
+                <li><i class="fa-solid fa-envelope"></i> biltek@gmail.com</li>
+                <li><i class="fa-solid fa-phone"></i> 0(212) 320 12 12</li>
+            </ul>
+         </div>
+         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <ul>
+                <li>  <i class="fa-solid fa-globe" ></i> Ana Sayfa </li>
+                <li><i class="fa-solid fa-address-card"></i> Hakkımızda</li>
+                <li><i class="fa-solid fa-diagram-project"></i> Projeler</li>
+                <li><i class="fa-solid fa-address-book"></i> İletişim</li>
+            </ul>
+         </div>
+         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+       <div class="sosyalmedya" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; ">
+        <li><i class="fa-brands fa-github"></i></li>
+        <li><i class="fa-brands fa-instagram"></i></li>
+        <li><i class="fa-brands fa-linkedin"></i></li>
+        <li><i class="fa-brands fa-facebook"></i></li>
+       </div>
+         </div>
+    </div>
+   
+</div>
+
+<br>
+<div style="border-top: 1px solid rgb(119, 119, 119); width: 100%; background-color: #080b13;; height: 50px; text-align: center; color: white; line-height: 50px;"> Bilim Ve Teknoloji Topluluğu (BİLTEK)
+    
+</div>
+
+</div>
+
+
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.umd.min.js"
+></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../../public/js/nav.js"></script>
+<script src="../../public/js/proje.js"></script>
+
+
+</body>
+</html>
