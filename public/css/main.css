@@ -354,7 +354,22 @@ background: linear-gradient(90deg, rgba(162,4,228,1) 5%, rgba(14,62,154,1) 93%);
 
 
 
+.loginBox{
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999999999999999999999999;
+    background-color: #20293fea;
+    display: none;
 
+}
+.loginboxin{
+    width: 100%;
+}
 
 .myfooter li{
 color: white;

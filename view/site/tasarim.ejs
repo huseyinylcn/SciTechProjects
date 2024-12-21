@@ -1,0 +1,135 @@
+
+
+<%- include('../partical/nav.ejs') %>
+
+
+
+<br>
+<br class="d-md-block d-sm-none d-none ">
+<div class="container">
+    <div class="w-100 " style=" display: flex; align-items: center; justify-content: center; width: 100px;">
+<div class="detaillogo ">
+    <img src="/img/jotform.png" alt="">
+</div>
+<div class="detailtitle w-100 ">
+    <h3>Jotform <i class="fa-solid fa-atom"></i></h3>
+<h4>UL/UX Tasarım Projesi</h4>
+</div>
+
+    </div>
+</div>
+
+<div class="container">
+<div class="cizgi"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-3" >
+ <div class="ozel" id="htmlBox">
+
+ </div>
+</div>
+
+
+<div class="container mt-2">
+    <button id="plus">Ekle <i class="fa-solid fa-plus"></i></button>
+<ul id="plusList">
+    <li id="bigtitleAddBtn">Başlık</li>
+    <li id="smalltitleAddBtn" >Küçük Başlık</li>
+    <li id="textAddBtn">Paragraf</li>
+    <li id="listAddBtn">Liste</li>
+    <li id="imgAddBtn">Fotoğraf</li>
+
+
+
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="design" id="design">
+    <div class="designBtnGroup">
+<div class="deginLeft">
+
+    <div class="dropdown ms-2">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Yazı Rengi
+        </button>
+        <ul class="dropdown-menu">
+          <li id="colorBlackBtn"><a class="dropdown-item" href="#">Siyah</a></li>
+          <li id="colorBlueBtn"><a class="dropdown-item" href="#">Mavi</a></li>
+          <li id="colorRedBtn"><a class="dropdown-item" href="#">Kırmızı</a></li>
+          <li id="colorYellowBtn"><a class="dropdown-item" href="#">Sarı</a></li>
+          <li id="colorGreenBtn"><a class="dropdown-item" href="#">Yeşil</a></li>
+          <li id="colorWhiteBtn"><a class="dropdown-item" href="#">Beyaz</a></li>
+
+
+          
+
+
+        </ul>
+      </div>
+      
+      <div class="dropdown ms-2">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Yazı Büyüklüğü
+        </button>
+        <ul class="dropdown-menu">
+          <li id="textSize1"><a class="dropdown-item" href="#">6</a></li>
+          <li id="textSize2"><a class="dropdown-item" href="#"> 5</a></li>
+          <li id="textSize3"><a class="dropdown-item" href="#">4</a></li>
+          <li id="textSize4"><a class="dropdown-item" href="#">3</a></li>
+          <li id="textSize5"><a class="dropdown-item" href="#">2</a></li>
+          <li id="textSize6"><a class="dropdown-item" href="#">1</a></li>
+
+
+        </ul>
+      </div>
+
+</div>
+<div class="deginRight">
+    
+    <button id="notChange"><i  class="fs-5 fa-solid fa-xmark" ></i></button>
+
+</div>
+
+    </div>
+    <textarea  name="" id="inp" placeholder="Lütfen Bir Şeyler Girin"></textarea>
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+<%- include('../partical/footer.ejs') %>
+
+
+<script src="/js/detail.js"></script>
+<script src="/js/ozel.js"></script>
+
+
+
+
+
+</body>
+</html>

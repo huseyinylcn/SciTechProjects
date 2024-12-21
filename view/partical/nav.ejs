@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css"
+    rel="stylesheet"
+  />
+   
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main_carusel.css">
+    <link rel="stylesheet" href="/css/proje.css">
+    <link rel="stylesheet" href="/css/ozel.css">
+
+    <link rel="shortcut icon" href="/img/logoseffaf2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+
+
+    <title>Bilim ve Teknoloji</title>
+</head>
+<body>
+
+
+
+    <div style="height: 70px;" id="home" ></div>
+    <div style=" z-index: 99999999999;">
+    <nav id="mynav">
+        <div class="my_navbar">
+            <div class="logo"></div>
+            <div class="navlist">
+                <div>
+                    <a style="color: white; text-decoration: none;" href="/">
+                    <i class="fa-solid fa-globe" ></i>
+                    <li>Ana Sayfa</li>
+                </a>
+                </div>
+                
+
+                <div>
+                    <a style="color: white; text-decoration: none;" href="/#hakkimizda">
+                    <i class="fa-solid fa-address-card"></i>
+                    <li>Hakkımızda</li>
+                </a>
+                </div>
+                
+
+                <div>
+                    <a style="color: white; text-decoration: none;" href="/project">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <li>Projeler</li>
+                    </a>
+                </div>
+                
+
+                <div>
+                    <a style="color: white; text-decoration: none;" href="/#myfooter">
+                    <i class="fa-solid fa-address-book"></i>
+                    <li>İletişim</li>
+                    </a>
+                </div>
+
+                <% if (!login) { %>
+                <div>
+                    <a id="loginOpenBtn" style="color: white; text-decoration: none;" href="#">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    <li>Giriş Yap</li>
+                    </a>
+                </div>
+                <% }else{ %>
+                  <div style="display: none;">
+                    <a id="loginOpenBtn" style="color: white; text-decoration: none;" href="#">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    <li>Giriş </li>
+                    </a>
+                </div>
+
+
+
+                <div >
+                  <a  style="color: white; text-decoration: none;" href="#">
+                    <img style="width: 35px; height: 35px; border-radius: 50%; border: none;" src="<%= userimg %>" alt="">
+                  <li>  <%= username %> </li>
+                  </a>
+              </div>
+
+
+                <% } %>
+                
+
+     
+
+                
+            </div>
+            <div class="navmobilList" id="mobilnavOpenBtn">
+                <i class="fa-solid fa-bars" style="color: white;"></i>
+            </div>
+        </div>
+
+
+
+    </nav>
+    
+
+</div>
+<div class="mobilnavbox" id="mobilnavbox">
+
+
+  <% if (login) { %>
+<img src="<%= userimg %>" alt="">
+<h4><%= username %></h4>
+
+<% } %>
+
+
+
+<ul>
+    <a style="color: white; text-decoration: none;" href="/"> <li><i class="fa-solid fa-globe" ></i> Ana sayfa</li> </a>
+    <a style="color: white; text-decoration: none;" href="/#hakkimizda">    <li><i class="fa-solid fa-address-card"></i> Hakkımızda</li> </a>
+ 
+    <a style="color: white; text-decoration: none;"  href="/project"><li> <i class="fa-solid fa-diagram-project"></i> Projeler</li></a>
+    <a style="color: white; text-decoration: none;" href="/#myfooter"><li> <i class="fa-solid fa-address-book"></i> İletişim</li></a>
+    <% if (!login) { %>
+    <a style="color: white; text-decoration: none;" id="mobilloginOpenBtn" ><li> <i class="fa-solid fa-right-to-bracket"></i> Giriş Yap</li></a>
+    <% }else{ %>
+      <a style="color: white; text-decoration: none; display: none;" id="mobilloginOpenBtn" ><li> <i class="fa-solid fa-right-to-bracket"></i> Giriş Yap</li></a>
+
+      <% if(firma){ %>
+      <a style="color: white; text-decoration: none;"  href="/tasarim"><li> <i class="fa-solid fa-plus"></i> Proje Ekle</li></a>
+      <% } %>
+
+
+
+      <% } %>
+
+    
+
+    
+
+
+</ul>
+</div>
+
+
+<div class="loginBox" id="loginBox">
+    <div class="loginboxin">
+    <section class="vh-100 gradient-custom " >
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+      
+                  <div class="mb-md-5 mt-md-4 pb-5">
+      
+                    <h2 class="fw-bold mb-2 text-uppercase">Login <i style="float: right; cursor: pointer;" id="loginBoxCloseBtn" class="fa-solid fa-xmark"></i></h2>
+                    <p id="loginInfo" class="text-white-50 mb-5">Kullanıcı adı ve şifrenizi girin</p>
+      
+                    <div data-mdb-input-init class="form-outline form-white mb-4">
+                      <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                      <label class="form-label" for="typeEmailX">Email</label>
+                    </div>
+      
+                    <div data-mdb-input-init class="form-outline form-white mb-4">
+                      <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                      <label class="form-label" for="typePasswordX">Password</label>
+                    </div>
+      
+                   
+      
+                    <button id="loginBtn" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="button">Login</button>
+      
+              
+      
+                  </div>
+      
+                  <div>
+
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+</div>
