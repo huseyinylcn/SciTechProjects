@@ -1,5 +1,7 @@
 const router = require("express").Router()
 const sql = require("mssql")
+const { projectGET, detailGET } = require("../Model/get")
+
 
 
 
@@ -13,32 +15,44 @@ router.get("/",(req,res,next)=>{
     }
 })
 
-router.get("/project",async(req,res,next)=>{
+
+
+
+router.get("/tanitim",(req,res,next)=>{
     if(req.user){
-        
-        if (req.user.firma == 1) res.render("projeler",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:1})
-       else res.render("projeler",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:0})
-     }
+       if (req.user.firma == 1) res.render("tanitim",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:1})
+       else res.render("tanitim",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:0})
+    }
+    else{
+        res.render("tanitim",{login:0})
+    }
+})
+
+
+
+
+
+router.get("/detail/:id",async(req,res,next)=>{
+    req.params.id
+    let data = await detailGET(req.params.id)
+    console.log(data)
+    if(req.user){
+   
+        if (req.user.firma == 1) res.render("detail",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:1, data:data})
+            else res.render("detail",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:0,data:data})     }
      else{
-         res.render("projeler",{login:0})
+         res.render("detail",{login:0,data:data})
      }
 })
 
-router.get("/detail",(req,res,next)=>{
-    if(req.user){
-        if (req.user.firma == 1) res.render("detail",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:1})
-            else res.render("detail",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:0})     }
-     else{
-         res.render("detail",{login:0})
-     }
-})
+
 
 router.get("/tasarim",(req,res,next)=>{
         if(req.user){
             if (req.user.firma == 1) res.render("tasarim",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:1})
-            else res.render("tasarim",{login:1,username:req.user.username,userimg:req.user.userimg ,firma:0})     }
-     else{
-         res.render("tasarim",{login:0})
+            else res.redirect("/");
+        }else{
+        res.redirect("/")
      }
 })
 

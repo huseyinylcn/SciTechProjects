@@ -7,8 +7,12 @@ plus.addEventListener('click',()=>{
 
 if (plusList.style.opacity == '0'){
     plusList.style.opacity = '1'
+    plusList.style.display = 'block'
+
+
 }else if(plusList.style.opacity == '1'){
 plusList.style.opacity = '0'
+plusList.style.display = 'none'
 }
 })
 
@@ -17,9 +21,11 @@ document.addEventListener('click',(event)=>{
     if(!plus.contains(event.target)){
 
     if (plusList.contains(event.target)) {
-        console.log("Elementin içine tıkladınız.");
+       
     } else {
+
        plusList.style.opacity  = '0'
+       plusList.style.display = 'none'
     }
 }
 })
@@ -36,6 +42,7 @@ bigtitleAddBtn.addEventListener("click",()=>{
     newH3.onclick = ElementClickEvent
     htmlBox.appendChild(newH3)
 plusList.style.opacity = '0'
+plusList.style.display = 'none'
 
 })
 
@@ -50,6 +57,7 @@ smalltitleAddBtn.addEventListener("click",()=>{
     htmlBox.appendChild(newH4)
     
 plusList.style.opacity = '0'
+plusList.style.display = 'none'
 
 })
 
@@ -63,6 +71,7 @@ textAddBtn.addEventListener("click",()=>{
     newP.onclick = ElementClickEvent
     htmlBox.appendChild(newP)
 plusList.style.opacity = '0'
+plusList.style.display = 'none'
 
 })
 
@@ -77,6 +86,7 @@ listAddBtn.addEventListener("click",()=>{
     newLi.onclick = ElementClickEvent
     htmlBox.appendChild(newLi)
 plusList.style.opacity = '0'
+plusList.style.display = 'none'
 
 })
 
@@ -281,4 +291,47 @@ textSize6.addEventListener('click',()=>{
     globalElement.target.classList.add('fs-6')
 
 
+})
+
+
+let yayinla = document.getElementById('yayinla')
+let projeBaslik = document.getElementById('projeBaslik')
+let projeAciklama = document.getElementById('projeAciklama')
+let projeKategori = document.getElementById('projeKategori')
+let projeSeviye = document.getElementById('projeSeviye')
+
+
+
+yayinla.addEventListener('click',()=>{
+
+    let data = {
+        baslik:projeBaslik.value,
+        html:htmlBox.innerHTML,
+        aciklama:projeAciklama.value,
+        kategori:projeKategori.value,
+        seviye:projeSeviye.value
+        
+
+
+    }
+    
+
+      fetch('/add/project', {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+      })
+      .then(response => response.json())
+      .then(json => {
+        if(json == 200){
+            location.reload("/project")
+        }else{
+
+            
+            alert("Başarısız")
+
+        }
+
+      })
+      .catch(err => console.log(err));
 })

@@ -9,11 +9,11 @@
 <div class="container">
     <div class="w-100 " style=" display: flex; align-items: center; justify-content: center; width: 100px;">
 <div class="detaillogo ">
-    <img src="/img/jotform.png" alt="">
+    <img src=" <%= userimg %>" alt="">
 </div>
 <div class="detailtitle w-100 ">
-    <h3>Jotform <i class="fa-solid fa-atom"></i></h3>
-<h4>UL/UX Tasarım Projesi</h4>
+    <h3> <%= username %><i class="fa-solid fa-atom"></i></h3>
+<h4>.</h4>
 </div>
 
     </div>
@@ -24,9 +24,50 @@
 </div>
 
 
+<div class="container">
+  <div class="mt-3">
+    <!-- Name input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+      <input type="text" id="projeBaslik" class="form-control text-light" />
+      <label class="form-label" for="form4Example1">Proje Başlığı</label>
+    </div>
+  
+    <!-- Email input -->
+    <div style="display: flex;">
 
 
 
+
+      <select id="projeKategori" class="form-select " aria-label="Default select example" style="width: 50%; background-color: transparent; margin-top: -10px; margin-bottom: 10px; margin-right: 10px;">
+        <option selected>Kategori</option>
+        <option value="Bilişim Sistemleri">Bilişim Sistemleri</option>
+        <option value="Elektronik Sistemleri">Elektronik Sistemleri</option>
+        <option value="Siber Güvenlik Sistemleri">Siber Güvenlik Sistemleri</option>
+      </select>
+
+
+
+
+      <select id="projeSeviye" class="form-select " aria-label="Default select example"  style="width: 50%; background-color: transparent; margin-top: -10px; margin-bottom: 10px; margin-right: 10px;">
+        <option selected>Seviye</option>
+        <option value="İleri Seviye">İleri Seviye</option>
+        <option value="Orta Seviye">Orta Seviye</option>
+        <option value="Başlangıç Seviyesi">Başlangıç Seviyesi</option>
+      </select>
+            
+    </div>
+  
+    <!-- Message input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+      <textarea class="form-control text-light" id="projeAciklama" rows="4"></textarea>
+      <label class="form-label" for="form4Example3">Kısa Proje Açıklaması</label>
+    </div>
+  
+
+  
+
+  </div>
+</div>
 
 
 
@@ -41,6 +82,8 @@
 
 <div class="container mt-2">
     <button id="plus">Ekle <i class="fa-solid fa-plus"></i></button>
+    <button id="yayinla">Yayınla <i class="fa-solid fa-plus"></i></button>
+
 <ul id="plusList">
     <li id="bigtitleAddBtn">Başlık</li>
     <li id="smalltitleAddBtn" >Küçük Başlık</li>
@@ -124,7 +167,7 @@
 <%- include('../partical/footer.ejs') %>
 
 
-<script src="/js/detail.js"></script>
+
 <script src="/js/ozel.js"></script>
 
 

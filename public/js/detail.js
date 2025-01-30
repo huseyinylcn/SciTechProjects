@@ -136,3 +136,6 @@
 //   }
 
 //   renderMarkdownWithGitHubAPI(readmeAll);
+let ozel = document.getElementById('ozel')
+
+ozel.innerHTML = new DOMParser().parseFromString('<!doctype html><body>' + ozel.innerHTML, 'text/html').body.textContent;

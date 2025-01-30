@@ -12,7 +12,12 @@ router.post('/',async(req,res,next)=>{
         console.log(result)
         if(result.status == 200){
             
-            req.logIn({username:result.data.name, userimg:result.data.logo,firma:1},()=>{
+            req.logIn(
+                {username:result.data.name,
+                    userimg:result.data.logo,
+                    firma:1,
+                    id:result.data.id
+                },()=>{
                 res.json({status:200})
             })
         }else{
@@ -23,11 +28,8 @@ router.post('/',async(req,res,next)=>{
         res.json({status:404})
     }
 
-
-    
-
-
 })
+
 
 
 module.exports = router

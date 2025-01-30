@@ -60,12 +60,20 @@ app.use(express.urlencoded({extended:true}))
 
 const main = require("./Router/main")
 const login = require("./Router/login")
+const add = require("./Router/add")
+const project = require("./Router/project")
+
+
 
 
 
 sql.connect(config).then(()=>{
   app.use("/",main)
   app.use("/login",login)
+  app.use("/add",add)
+  app.use("/project",project)
+
+
 })
 
 

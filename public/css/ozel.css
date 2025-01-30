@@ -7,7 +7,7 @@
     max-width: 1000px;
 }
 
-#plus{
+#plus {
     width: 120px;
     height: 35px;
     border: none;
@@ -17,6 +17,20 @@
     font-weight: 600;
     color: black;
 }
+
+
+ #yayinla{
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    color: black;
+}
+
+
 #plusList{
     width: 160px;
     height: auto;
@@ -27,6 +41,7 @@
     margin-left: 100px;
     margin-top: 9px;
     opacity: 0;
+    display: none;
     transition: 0.s;
 
 }
